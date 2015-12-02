@@ -8,14 +8,7 @@ describe('factory: Search', function() {
     search = Search;
   }));
 
-  beforeEach(inject(function($httpBackend) {
-    httpBackend = $httpBackend
-    httpBackend
-      .expectGET("https://api.github.com/search/users?access_token=" + git_token + "&q=hello")
-      .respond(
-          { items: items }
-          );
-  }));
+  beforeEach(inject(stubGET));
 
   it('returns search results', function() {
     search.query('hello')

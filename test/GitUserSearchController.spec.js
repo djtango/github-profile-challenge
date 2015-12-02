@@ -14,15 +14,8 @@ describe('GitUserSearchController', function() {
 
   describe('when searching for a user', function() {
 
-    var httpBackend;
-    beforeEach(inject(function($httpBackend){
-      httpBackend = $httpBackend
-      httpBackend
-        .expectGET("https://api.github.com/search/users?access_token=" + git_token + "&q=hello")
-        .respond(
-          { items: items }
-          );
-    }));
+    // var httpBackend;
+    beforeEach(inject(stubGET));
 
     afterEach(function() {
       httpBackend.verifyNoOutstandingExpectation();

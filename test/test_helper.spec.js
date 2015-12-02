@@ -11,12 +11,12 @@ var items = [
   }
 ];
 
-// 
-// var stubGET = function($httpBackend) {
-//   httpBackend = $httpBackend
-//   httpBackend
-//     .expectGET("https://api.github.com/search/users?access_token=" + git_token + "&q=hello")
-//     .respond(
-//         { items: items }
-//         );
-// };
+var httpBackend;
+var stubGET = function($httpBackend) {
+  httpBackend = $httpBackend
+  httpBackend
+    .expectGET("https://api.github.com/search/users?access_token=" + git_token + "&q=hello")
+    .respond(
+        { items: items }
+        );
+};
