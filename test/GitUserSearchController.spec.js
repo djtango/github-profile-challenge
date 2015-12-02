@@ -18,7 +18,7 @@ describe('GitUserSearchController', function() {
     beforeEach(inject(function($httpBackend){
       httpBackend = $httpBackend
       httpBackend
-        .expectGET("https://api.github.com/search/users?access_token=f1045bc5ec741c69e9edbb645ea0a6688cd36a30&q=hello")
+        .expectGET("https://api.github.com/search/users?access_token=" + git_token + "&q=hello")
         .respond(
           { items: items }
           );
@@ -29,18 +29,6 @@ describe('GitUserSearchController', function() {
       httpBackend.verifyNoOutstandingRequest();
     });
 
-    var items = [
-    {
-      "login": "tansaku",
-      "avatar_url": "https://avatars.githubusercontent.com/u/30216?v=3",
-      "html_url": "https://github.com/tansaku"
-    },
-    {
-        "login": "stephenlloyd",
-        "avatar_url": "https://avatars.githubusercontent.com/u/196474?v=3",
-        "html_url": "https://github.com/stephenlloyd"
-    }
-    ];
 
     it('displays search results', function() {
       ctrl.searchTerm = 'hello';
@@ -52,5 +40,3 @@ describe('GitUserSearchController', function() {
   });
 
 });
-
-
