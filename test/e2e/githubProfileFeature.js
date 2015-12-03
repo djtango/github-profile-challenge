@@ -12,9 +12,10 @@ describe('Github Profile finder', function() {
   });
 
   it('finds profiles', function() {
-    searchBox.sendKeys('spike01');
+    searchBox.sendKeys('spike');
     searchButton.click();
-    expect(element(by.binding('user.login')).getText()).toEqual('spike01');
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
+    expect(profiles.get(0).getText()).toEqual('spike01');
   });
 
 });
