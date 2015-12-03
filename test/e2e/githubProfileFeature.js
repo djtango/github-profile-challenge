@@ -2,6 +2,11 @@ describe('Github Profile finder', function() {
   
   var searchBox = element(by.model('searchCtrl.searchTerm'));
   var searchButton = element(by.className('btn'));
+  var mockModule;
+
+  beforeEach(function(){
+    mockModule = require('./js/mock.js')
+  });
 
   beforeEach(function(){
     browser.get('http://localhost:8080');
@@ -18,4 +23,7 @@ describe('Github Profile finder', function() {
     expect(profiles.get(0).getText()).toEqual('spike01');
   });
 
+  it('mocks the module', function() {
+    browser.addMockModule('httpBackendMock', mockModule.)
+  })
 });
