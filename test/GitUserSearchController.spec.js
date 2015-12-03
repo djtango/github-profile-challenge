@@ -14,7 +14,6 @@ describe('GitUserSearchController', function() {
 
   describe('when searching for a user', function() {
 
-    // var httpBackend;
     beforeEach(inject(stubGET));
 
     afterEach(function() {

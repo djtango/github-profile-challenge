@@ -8,14 +8,20 @@
   },
   "author": "",
   "license": "ISC",
+   
   "devDependencies": {
-    "jasmine-core": "^2.2.0",
-    "karma": "^0.13.15",
-    "karma-chrome-launcher": "^0.2.1",
+    "ecstatic": "^0.8.0",
+    "gulp": "^3.9.0",
+    "gulp-protractor": "^1.0.0",
+    "http-server": "^0.8.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.1",
-    "karma-requirejs": "^0.2.2",
-    "karma-spec-reporter": "0.0.23",
-    "protractor": "^3.0.0"
+    "phantomjs": "^1.9.18",
+    "protractor": "^2.2.0",
+    "protractor-http-mock": "^0.1.17",
+    "server-destroy": "^1.0.1"
   }
 }
