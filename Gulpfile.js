@@ -19,14 +19,14 @@ var karmaServer          = require('karma').Server;
   gulp.task('server', function(){
     var port = 8080;
     server = http.createServer(
-      ecstatic({ root: '.' })
+      ecstatic({ root: 'public/.' })
     ).listen(port);
     enableDestroy(server);
     console.log('Server live on ' + port);
   });
 
   gulp.task('e2e', ['server'], function(cb) {
-    gulp.src(["./test/e2e/*.js"])
+    gulp.src(["./public/js/token.js","./test/e2e/*.js"])
         .pipe(protractor({
             configFile: "test/e2e/conf.js",
             args: ['--baseUrl', 'http://127.0.0.1:8000']

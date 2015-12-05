@@ -1,5 +1,6 @@
 public/bower_components
 node_modules
-js/token.js
+public/js/token.js
+test/e2e/token.js
 *.swp
 *.swo
