@@ -25,17 +25,17 @@ describe('Github Profile finder', function() {
     expect(profiles.get(0).getText()).toEqual('spike01');
   });
 
-  // it('mocks the module', function() {
-  //   browser.addMockModule('httpBackendMock', function(){
-  //     // angular.module('httpBackendMock', ['GitUserSearch', 'ngMockE2E'])
-  //       .run(function($httpBackend) {
-  //         $httpBackend.whenGET(giturl + gitTokenModule.git_token + '&q=djtango').respond({"items": {0: {"login": "dumplings"}}});
-  //       });
-  //   });
-  //   browser.get('https://api.github.com/search/users?access_token=' + gitTokenModule.git_token + '&q=djtango');
-  //   // searchBox.sendKeys('djtango');
-  //   // searchButton.click();
-  //   var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-  //   expect(profiles.get(0).getText()).toEqual('dumplings');
-  // });
+  it('mocks the module', function() {
+    browser.addMockModule('httpBackendMock', function(){
+      angular.module('httpBackendMock', ['GitUserSearch', 'ngMockE2E'])
+        .run(function($httpBackend) {
+          $httpBackend.whenGET(giturl + gitTokenModule.git_token + '&q=djtango').respond({"items": {0: {"login": "dumplings"}}});
+        });
+    });
+    browser.get('https://api.github.com/search/users?access_token=' + gitTokenModule.git_token + '&q=djtango');
+    // searchBox.sendKeys('djtango');
+    // searchButton.click();
+    var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
+    expect(profiles.get(0).getText()).toEqual('dumplings');
+  });
 });
